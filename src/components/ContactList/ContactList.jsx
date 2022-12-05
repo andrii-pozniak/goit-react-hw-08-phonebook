@@ -7,9 +7,9 @@ import { StyleItem, StyleButton, StylePage } from "./ContactList.style";
 
 export const ContactList = () => {
    const contacts = useSelector(getContacts);
-   console.log({contacts})
+   // console.log({contacts})
    const dispatch = useDispatch();
-   console.log(deletePhone(contacts.id))
+   // console.log(deletePhone(contacts.id))
     return <ul> 
       {contacts.map(({ name, number, id}) => (
          <StyleItem key={id}>
