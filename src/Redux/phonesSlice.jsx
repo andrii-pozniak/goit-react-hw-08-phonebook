@@ -30,8 +30,12 @@ const phonesInitialState = [
             },
       },
         deletePhone(state, action) {
-            const index = state.findIndex(contacts => contacts.id === action.payload);
+          console.log(contacts.id)
+            const index = state.findIndex(contact => contact.id === action.payload);
+            console.log(index)
+
             state.splice(index, 1);
+            
       },
         toggleCompleted(state, action) {
             for (const contacts of state) {
@@ -46,4 +50,4 @@ const phonesInitialState = [
   })
 
   export const { contacts, deletePhone, toggleCompleted } = phonesSlice.actions
-export const phoneReducer = phonesSlice.reducer
+export const phoneReducer = phonesSlice.reducer;

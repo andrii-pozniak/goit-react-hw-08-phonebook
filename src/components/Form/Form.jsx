@@ -6,11 +6,10 @@ import { contacts } from "Redux/phonesSlice";
 import { StyleForm, StyleLabel, StyleButton, StyleInput} from "./Form.Styled";
 // import { Page } from "components/Page/page";
 
-export  const Form =({onSubmit})=> {
+export  const Form =()=> {
     const dispatch = useDispatch();
     const [name, setName] = useState();
     const [number, setNumber] = useState();
-
    
     const handleChange = evt => {
         const {name, value} = evt.target
@@ -23,7 +22,6 @@ export  const Form =({onSubmit})=> {
                 break;   
                 default:
                 return;
-
         }
     }
 
@@ -51,7 +49,7 @@ export  const Form =({onSubmit})=> {
                  pattern="^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$"
                  title="Name may contain only letters, apostrophe, dash and spaces. For example Adrian, Jacob Mercer, Charles de Batz de Castelmore d'Artagnan"
                  required
-                 // id={this.nameInputId}
+                 
                  value={name} 
                  onChange={handleChange}
                  />
@@ -62,18 +60,15 @@ export  const Form =({onSubmit})=> {
                  pattern="\+?\d{1,4}?[-.\s]?\(?\d{1,3}?\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9}"
                  title="Phone number must be digits and can contain spaces, dashes, parentheses and can start with +"
                  required
-                 // id={this.nameInputId}
+                 
                  value={number} 
                  onChange={handleChange}
                     />
              <StyleButton type='submit'>Add contact</StyleButton>
          </StyleForm>
-         <h2>Contacts</h2>
-        
+         <h2>Contacts</h2>        
         </>
                     
      )
     
 } 
-
-// 

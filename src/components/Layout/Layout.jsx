@@ -1,4 +1,5 @@
 import {Form} from "components/Form/Form";
+import { Filter } from "components/Filter/Filter";
 // import { useSelector, useDispatch } from "react-redux"
 import { ContactList } from "components/ContactList/ContactList";
 import { Outlet } from "react-router-dom";
@@ -10,6 +11,7 @@ export const Layout = () => {
     return (
     <div>
         <Form/>
+        <Filter/>
         <ContactList/>
         <Outlet/>
     </div>
