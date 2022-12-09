@@ -9,7 +9,7 @@ const phonesInitialState = [
 
   const phonesSlice = createSlice({
     name: 'contacts',
-    filter: "",
+    // filter: '',
     initialState: phonesInitialState,
     reducers:{
       contacts:{
@@ -37,17 +37,23 @@ const phonesInitialState = [
             state.splice(index, 1);
             
       },
-        toggleCompleted(state, action) {
-            for (const contacts of state) {
-              if (contacts.id === action.payload) {
-                contacts.completed = !contacts.completed;
-                break;
-              }
-            }
-      },
+      // filterName(state, action) {
+      //   console.log(action.payload)
+      //   // if(state.filterPhone === ''){
+      //   //   return
+      //   //  }
+      //    state.filter = action.payload
+      //   console.log(state.filter)
+      //   console.log(action.payload)
+      //   const normalizedFilter = state.filter.toLowerCase(); 
+      
+      // return  state.filter.filter(({filter}) => 
+      // filter.toLowerCase().includes(normalizedFilter));
+      // },
       
     }
   })
 
-  export const { contacts, deletePhone, toggleCompleted } = phonesSlice.actions
+  export const { contacts, deletePhone, filterName } = phonesSlice.actions
 export const phoneReducer = phonesSlice.reducer;
+// export const filtersReducer = phonesSlice.reducer;

@@ -10,9 +10,9 @@ export  const Form =()=> {
     const dispatch = useDispatch();
     const [name, setName] = useState();
     const [number, setNumber] = useState();
-   
     const handleChange = evt => {
         const {name, value} = evt.target
+       
         switch(name) {
             case `name`:
                 setName(value)  
