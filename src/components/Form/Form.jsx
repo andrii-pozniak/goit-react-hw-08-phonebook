@@ -1,18 +1,22 @@
 import {useState} from 'react';
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { contacts } from "Redux/phonesSlice";
+import { getContacts } from "Redux/selector";
+import {  nanoid } from "@reduxjs/toolkit";
 
-// import { nanoid } from 'nanoid';
+
 import { StyleForm, StyleLabel, StyleButton, StyleInput} from "./Form.Styled";
-// import { Page } from "components/Page/page";
 
 export  const Form =()=> {
     const dispatch = useDispatch();
     const [name, setName] = useState();
     const [number, setNumber] = useState();
+    const phoneContacts = useSelector(getContacts);
+
     const handleChange = evt => {
         const {name, value} = evt.target
-       
+        console.log(phoneContacts)
+      
         switch(name) {
             case `name`:
                 setName(value)  
@@ -27,9 +31,9 @@ export  const Form =()=> {
 
         const handleSubmit = event => {
             event.preventDefault();
-            // const form = event.target;
+           
             console.log({name, number})
-            dispatch(contacts({name, number}));
+            dispatch(contacts({id: nanoid(3), name, number }));
            reset();
           };
           const reset = () => {
