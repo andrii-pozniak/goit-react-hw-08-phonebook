@@ -1,9 +1,9 @@
 import {useState} from 'react';
 import { useDispatch, useSelector } from "react-redux";
-import { contacts } from "Redux/phonesSlice";
+// import { contacts } from "Redux/phonesSlice";
 import { getContacts } from "Redux/selector";
 import {  nanoid } from "@reduxjs/toolkit";
-
+import { addContact } from "Redux/operations";
 
 import { StyleForm, StyleLabel, StyleButton, StyleInput} from "./Form.Styled";
 
@@ -33,7 +33,7 @@ export  const Form =()=> {
             event.preventDefault();
            
             console.log({name, number})
-            dispatch(contacts({id: nanoid(3), name, number }));
+            dispatch(addContact( {name, number, id: nanoid(3)} ));
            reset();
           };
           const reset = () => {

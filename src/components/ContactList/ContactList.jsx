@@ -1,7 +1,7 @@
 import React from 'react';
 import { useDispatch,useSelector } from "react-redux";
 import { getFilter, getContacts } from "Redux/selector";
-import { deletePhone } from "Redux/phonesSlice";
+import { deleteContacts } from "Redux/operations";
 // import PropTypes from 'prop-types';
 import { StyleItem, StyleButton, StylePage } from "./ContactList.style";
 
@@ -25,7 +25,7 @@ export const ContactList = () => {
          <StyleItem key={id}>
             <StylePage >{name}: {number}</StylePage>
            
-            <StyleButton type='button' onClick = { () => dispatch(deletePhone(id))}>delete</StyleButton>
+            <StyleButton type='button' onClick = { () => dispatch(deleteContacts(id))}>delete</StyleButton>
          </StyleItem>
       )) 
        }
