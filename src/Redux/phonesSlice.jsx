@@ -30,6 +30,9 @@ const handleRejected = (state, action) => {
       [addContact.fulfilled](state, action) {
         state.isLoading = false;
         state.error = null;
+        if(state.contacts.some(el => el.name === action.payload.name)) {
+          return alert('Contact already exist')
+       }
         state.contacts.push(action.payload);
       },
       [addContact.rejected](state, action) {
