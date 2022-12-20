@@ -8,7 +8,7 @@ import { StyleItem, StyleButton, StylePage } from "./ContactList.style";
 export const ContactList = () => {
    const contacts = useSelector(getContacts);
    const filterName = useSelector(getFilter)
-   // console.log(contacts)
+console.log(contacts)
   
    const dispatch = useDispatch();
    
