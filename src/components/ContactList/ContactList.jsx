@@ -21,9 +21,9 @@ console.log(contacts)
      const visibleContact = getVisibleContact();
      console.log(visibleContact)
     return <ul> 
-      {visibleContact.map(({ name, number, id}) => (
+      {visibleContact.map(({ name, tel, id}) => (
          <StyleItem key={id}>
-            <StylePage >{name}: {number}</StylePage>
+            <StylePage >{name}: {tel}</StylePage>
            
             <StyleButton type='button' onClick = { () => dispatch(deleteContacts(id))}>delete</StyleButton>
          </StyleItem>

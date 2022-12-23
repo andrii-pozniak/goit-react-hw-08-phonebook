@@ -9,7 +9,7 @@ import { StyleForm, StyleLabel, StyleButton, StyleInput} from "./Form.Styled";
 export  const Form =()=> {
     const dispatch = useDispatch();
     const [name, setName] = useState();
-    const [number, setNumber] = useState();
+    const [tel, setTel] = useState();
     const phoneContacts = useSelector(getContacts);
 
     const handleChange = evt => {
@@ -21,7 +21,7 @@ export  const Form =()=> {
                 setName(value)  
                 break;
             case `number`:
-                setNumber(value)  
+                setTel(value)  
                 break;   
                 default:
                 return;
@@ -31,13 +31,13 @@ export  const Form =()=> {
         const handleSubmit = event => {
             event.preventDefault();
            
-            console.log({name, number})
-            dispatch(addContact( {name, number, id: nanoid(3)} ));
+            console.log({name, tel})
+            dispatch(addContact( {name, tel, id: nanoid(3)} ));
            reset();
           };
           const reset = () => {
             setName('')
-            setNumber('')
+            setTel('')
             
             }
     return (
@@ -64,7 +64,7 @@ export  const Form =()=> {
                  title="Phone number must be digits and can contain spaces, dashes, parentheses and can start with +"
                  required
                  
-                 value={number} 
+                 value={tel} 
                  onChange={handleChange}
                     />
              <StyleButton type='submit'>Add contact</StyleButton>
