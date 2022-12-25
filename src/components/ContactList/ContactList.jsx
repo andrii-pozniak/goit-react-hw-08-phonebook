@@ -1,13 +1,13 @@
 import React from 'react';
 import { useDispatch,useSelector } from "react-redux";
-import { getFilter, getContacts } from "Redux/selector";
-import { deleteContacts } from "Redux/operations";
+import { selectFilter, selectContacts } from "Redux/contacts/selector";
+import { deleteContacts } from "Redux/contacts/operations";
 // import PropTypes from 'prop-types';
 import { StyleItem, StyleButton, StylePage } from "./ContactList.style";
 
 export const ContactList = () => {
-   const contacts = useSelector(getContacts);
-   const filterName = useSelector(getFilter)
+   const contacts = useSelector(selectContacts);
+   const filterName = useSelector(selectFilter)
 console.log(contacts)
   
    const dispatch = useDispatch();

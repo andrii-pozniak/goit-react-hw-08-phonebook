@@ -1,8 +1,8 @@
 import {useState} from 'react';
 import { useDispatch, useSelector } from "react-redux";
-import { getContacts } from "Redux/selector";
+import { selectContacts } from "Redux/contacts/selector";
 import {  nanoid } from "@reduxjs/toolkit";
-import { addContact } from "Redux/operations";
+import { addContact } from "Redux/contacts/operations";
 
 import { StyleForm, StyleLabel, StyleButton, StyleInput} from "./Form.Styled";
 
@@ -10,7 +10,7 @@ export  const Form =()=> {
     const dispatch = useDispatch();
     const [name, setName] = useState();
     const [tel, setTel] = useState();
-    const phoneContacts = useSelector(getContacts);
+    const phoneContacts = useSelector(selectContacts);
 
     const handleChange = evt => {
         const {name, value} = evt.target

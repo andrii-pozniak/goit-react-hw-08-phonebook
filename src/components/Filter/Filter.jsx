@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
 import { useDispatch } from "react-redux";
-import { setFilter } from "Redux/filterSlice";
+import { setFilter } from "Redux/contacts/filterSlice";
 
 import { StyleLabel, StyleInput} from "./Filter.Style"
 
