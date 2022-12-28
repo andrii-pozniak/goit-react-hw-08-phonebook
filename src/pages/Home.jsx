@@ -1,5 +1,4 @@
-// import { Flex, Container, Box } from '@chakra-ui/react';
-// import { ColorModeSwitcher } from 'components/ColorModeSwitcher';
+import { Flex, Container, Box } from '@chakra-ui/react';
 
 const styles = {
     container: {
@@ -17,16 +16,10 @@ const styles = {
 
   export default function Home() {
     return (
-        // <Box as='header'>
-        //     <Container maxW='Container.lg'>
-        //         <Flex>
-               
-        //         <ColorModeSwitcher/>
-        //         </Flex>
-                
-        //     </Container>
-        // </Box>
-      <div style={styles.container}>
+        <Box >
+            <Container w='98%'>
+                <Flex w='98%'>
+                <div style={styles.container}>
         <h1 style={styles.title}>
           Task manager welcome page{' '}
           <span role="img" aria-label="Greeting icon">
@@ -34,5 +27,11 @@ const styles = {
           </span>
         </h1>
       </div>
+               
+                </Flex>
+                
+            </Container>
+        </Box>
+      
     );
   }

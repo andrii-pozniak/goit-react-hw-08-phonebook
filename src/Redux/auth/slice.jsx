@@ -13,25 +13,25 @@ const authSlice = createSlice({
   initialState,
   extraReducers: {
     [register.fulfilled](state, action) {
-      console.log(action)
-      console.log(state)
+      // console.log(action)
+      // console.log(state)
       state.user = action.payload.user;
       state.token = action.payload.token;
       state.isLoggedIn = true;
     },
     [logIn.fulfilled](state, action) {
-      console.log(state)
-      console.log(action)
+      // console.log(state)
+      // console.log(action)
       state.user = action.payload.user;
       state.token = action.payload.token;
-      console.log(state)
+     
       state.isLoggedIn = true;
     },
     [logOut.fulfilled](state) {
       state.user = { name: null, email: null };
-      console.log(state)
+      
       state.token = null;
-      console.log(state.isLoggedIn)
+      // console.log(state.isLoggedIn)
       state.isLoggedIn = false;
     },
     [refreshUser.pending](state) {
@@ -41,8 +41,7 @@ const authSlice = createSlice({
       console.log(action)
       console.log(state)
       state.user = action.payload;
-      console.log(state.user)
-      console.log(state.isLoggedIn)
+      
       state.isLoggedIn = true;
       state.isRefreshing = false;
     },

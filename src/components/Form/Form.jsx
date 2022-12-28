@@ -3,13 +3,14 @@ import { useDispatch, useSelector } from "react-redux";
 import { selectContacts } from "Redux/contacts/selector";
 import {  nanoid } from "@reduxjs/toolkit";
 import { addContact } from "Redux/contacts/operations";
+import { Button, Input, Text, Heading, Stack, Box, Container } from '@chakra-ui/react';
 
-import { StyleForm, StyleLabel, StyleButton, StyleInput} from "./Form.Styled";
+// import { StyleForm, StyleLabel, StyleButton, StyleInput} from "./Form.Styled";
 
 export  const Form =()=> {
     const dispatch = useDispatch();
     const [name, setName] = useState();
-    const [tel, setTel] = useState();
+    const [number, setNumber] = useState();
     const phoneContacts = useSelector(selectContacts);
 
     const handleChange = evt => {
@@ -21,7 +22,7 @@ export  const Form =()=> {
                 setName(value)  
                 break;
             case `number`:
-                setTel(value)  
+                setNumber(value)  
                 break;   
                 default:
                 return;
@@ -31,22 +32,26 @@ export  const Form =()=> {
         const handleSubmit = event => {
             event.preventDefault();
            
-            console.log({name, tel})
-            dispatch(addContact( {name, tel, id: nanoid(3)} ));
+            console.log({name, number})
+            dispatch(addContact( { id: nanoid(2), name, number } ));
            reset();
           };
           const reset = () => {
             setName('')
-            setTel('')
+            setNumber('')
             
             }
     return (
         <>
-        <h1>Phonebook</h1>
-         <StyleForm onSubmit={handleSubmit}>
+        
+        <Box w={'90%'} py='5' >
+            <Container>
+            <Heading as='h1' size='l' noOfLines={1}>Phonebook</Heading>
+            <Stack spacing={2}>
+            <form onSubmit={handleSubmit}>
              
-             <StyleLabel htmlFor=''> Name </StyleLabel>
-                 <StyleInput
+             <Text htmlFor=''> Name </Text>
+                 <Input width="50%"
                  type="text"
                  name="name"
                  pattern="^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$"
@@ -56,20 +61,25 @@ export  const Form =()=> {
                  value={name} 
                  onChange={handleChange}
                  />
-             <StyleLabel htmlFor=''> Number </StyleLabel>
-                 <StyleInput
-                 type="tel"
+             <Text htmlFor=''> Number </Text>
+                 <Input width="50%"
                  name="number"
                  pattern="\+?\d{1,4}?[-.\s]?\(?\d{1,3}?\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9}"
                  title="Phone number must be digits and can contain spaces, dashes, parentheses and can start with +"
                  required
                  
-                 value={tel} 
+                 value={number} 
                  onChange={handleChange}
                     />
-             <StyleButton type='submit'>Add contact</StyleButton>
-         </StyleForm>
-         <h2>Contacts</h2>        
+             <Button display="flex" mt={'4'} bg='blue.100' type='submit'>Add contact</Button>
+         </form>
+            </Stack>
+            <Heading mt={'4'} as='h2' size='l' noOfLines={1}>Contacts</Heading>        
+
+            </Container>
+            
+        </Box>
+         
         </>
                     
      )
