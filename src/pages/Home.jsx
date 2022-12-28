@@ -1,4 +1,4 @@
-import { Flex, Container, Box } from '@chakra-ui/react';
+import { Flex, Container, Box, Image } from '@chakra-ui/react';
 
 const styles = {
     container: {
@@ -18,18 +18,21 @@ const styles = {
     return (
         <Box >
             <Container w='98%'>
-                <Flex w='98%'>
+                <Flex w='98%' >
                 <div style={styles.container}>
         <h1 style={styles.title}>
           Task manager welcome page{' '}
           <span role="img" aria-label="Greeting icon">
             💁‍♀️
+            
           </span>
+          
         </h1>
+        <img src='/logo512.png'   alt='Dan Abramov'  />
       </div>
                
                 </Flex>
-                
+               
             </Container>
         </Box>
       
