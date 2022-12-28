@@ -1,17 +1,11 @@
 import { Routes, Route} from "react-router-dom";
-import  {Form}  from "components/Form/Form";
 import { Layout } from "components/Layout/Layout";
-// import { ContactList } from "components/ContactList/ContactList";
 import { useEffect, lazy } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { fetchContacts } from "Redux/contacts/operations";
-import { selectError, selectLoading } from "Redux/contacts/selector";
+import { useDispatch } from "react-redux";
 import { PrivateRoute } from 'components/PrivateRoute';
 import { RestrictedRoute } from 'components/RestrictedRoute';
 import { useAuth } from 'hooks';
 import { refreshUser } from 'Redux/auth/operations';
-
-
 
 const HomePage = lazy(() => import('../pages/Home'));
 const RegisterPage = lazy(() => import('../pages/Register'));
