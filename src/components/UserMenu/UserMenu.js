@@ -8,7 +8,7 @@ import { Button } from '@chakra-ui/react';
 export const UserMenu = () => {
   const dispatch = useDispatch();
   const { user } = useAuth();
-
+console.log(user)
   return (
     <div className={css.wrapper}>
       <p className={css.username}>Welcome, {user.name}</p>

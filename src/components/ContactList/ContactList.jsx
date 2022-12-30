@@ -10,18 +10,18 @@ import { Button, List, Stack, Box, Text, Grid, GridItem, Container } from '@chak
 export const ContactList = () => {
    const contacts = useSelector(selectContacts);
    const filterName = useSelector(selectFilter)
-   console.log(contacts)
+   // console.log(contacts)
   
    const dispatch = useDispatch();
    
    const getVisibleContact = () => {
-      console.log(filterName)
+      // console.log(filterName)
       return  contacts.filter(contact => 
         contact.name.toLowerCase().includes(filterName.filters));
         
      };
      const visibleContact = getVisibleContact();
-     console.log(visibleContact)
+   //   console.log(visibleContact)
     return <ul> 
       {visibleContact.map(({ name, number, id}) => (
          <Box w={'90%'} py='4'>

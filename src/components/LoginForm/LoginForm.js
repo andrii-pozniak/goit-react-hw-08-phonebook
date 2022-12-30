@@ -24,11 +24,11 @@ export const LoginForm = () => {
       <Container>
       <Stack spacing={2}>
         <form className={css.form} onSubmit={handleSubmit} autoComplete="off">
-      <label className={css.label}>
+        <label className={css.label}>
         Email
         <Input type="email" name="email" />
-      </label>
-      <label className={css.label}>
+        </label>
+        <label className={css.label}>
         Password
         <Input type="password" name="password" />
       </label>

@@ -32,8 +32,8 @@ const handleRejected = (state, action) => {
     [fetchContacts.fulfilled](state, action) {
       state.isLoading = false;
       state.error = null;
-      console.log({action})
-      console.log({state})
+      // console.log({action})
+      // console.log({state})
       state.contacts = action.payload;
       console.log(action.payload)
     },
